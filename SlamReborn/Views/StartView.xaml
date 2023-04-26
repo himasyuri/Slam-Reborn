@@ -1,0 +1,133 @@
+<UserControl x:Class="SlamReborn.Views.StartView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:SlamReborn.Views" xmlns:components="clr-namespace:SlamReborn.Components" xmlns:viewmodels="clr-namespace:SlamReborn.ViewModels" d:DataContext="{d:DesignInstance Type=viewmodels:StartViewModel}"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800">
+    <Border Background="WhiteSmoke"
+            CornerRadius="5">
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="700"/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="75"/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+
+            <TextBlock Text="Game:"
+                       VerticalAlignment="Center"
+                       HorizontalAlignment="Left"
+                       Foreground="Black"
+                       Background="WhiteSmoke"
+                       FontSize="30"
+                       FontFamily="Tahoma"
+                       Margin="15, 0, 0, 0"
+                       Width="100"
+                       Height="40"/>
+            <Button Grid.Column="1"
+                    Grid.Row="0"
+                    VerticalAlignment="Center"
+                    HorizontalAlignment="Center"
+                    Content="Settings"
+                    Height="50"
+                    Width="115"
+                    Margin="0,0,0,0"
+                    FontSize="16"
+                    FontFamily="Tahoma"
+                    Command="{Binding OpenSettingsCommand}"/>
+            <components:GamesComboBox DataContext="{Binding GamesComboBoxViewModel}"/>
+            <!--<ListView Grid.Row="1" 
+                      HorizontalAlignment="Center"
+                      VerticalAlignment="Top"
+                      Width="680" 
+                      Height="489" 
+                      Margin="5,20,0,0"
+                      d:ItemsSource="{d:SampleData ItemCount=10}">
+                <ListView.View>
+                    <GridView>
+                        <GridViewColumn 
+                            Width="100"
+                            DisplayMemberBinding="{Binding Path=Title}"
+                            >Loaded</GridViewColumn>
+                        <GridViewColumn 
+                            Width="100"
+                            DisplayMemberBinding="{Binding Path=Title}"
+                            >Track</GridViewColumn>
+                        <GridViewColumn 
+                            Width="80"
+                            DisplayMemberBinding="{Binding Path=Title}"
+                            >Volume</GridViewColumn>
+                        <GridViewColumn 
+                            Width="90"
+                            DisplayMemberBinding="{Binding Path=Title}"
+                            >Trimmed</GridViewColumn>
+                        <GridViewColumn 
+                            Width="300"
+                            DisplayMemberBinding="{Binding Path=Title}"
+                            >Tags</GridViewColumn>
+                    </GridView>
+                </ListView.View>
+            </ListView>-->
+            <components:TracksListView VerticalAlignment="Top"
+                                       Height="380"
+                                       DataContext="{Binding TracksListViewModel}" Grid.Row="1"/>
+            <Button Grid.Column="1"
+                    Grid.Row="1"
+                    VerticalAlignment="Top"
+                    HorizontalAlignment="Center"
+                    Content="YouTube Import"
+                    Height="50"
+                    Width="115"
+                    Margin="0,20,0,0"
+                    FontSize="15"
+                    FontFamily="Tahoma"
+                    Command="{Binding YouTubeImportCommand}"/>
+            <Button Grid.Column="1"
+                    Grid.Row="1"
+                    VerticalAlignment="Top"
+                    HorizontalAlignment="Center"
+                    Content="Import Music"
+                    Height="50"
+                    Width="115"
+                    Margin="0,100,0,0"
+                    FontSize="16"
+                    FontFamily="Tahoma"
+                    Command="{Binding ImportMusicCommand}"/>
+            <Button Grid.Column="1"
+                    Grid.Row="1"
+                    VerticalAlignment="Top"
+                    HorizontalAlignment="Center"
+                    Content="Start"
+                    Height="50"
+                    Width="115"
+                    Margin="0,180,0,0"
+                    FontSize="16"
+                    FontFamily="Tahoma"
+                    Command="{Binding StartCommand}"/>
+            <TextBlock Grid.Row="1"
+                       Grid.Column="1"
+                       VerticalAlignment="Bottom"
+                       HorizontalAlignment="Left"
+                       Text="Status:"
+                       Height="35"
+                       Width="55"
+                       FontSize="16"
+                       FontFamily="Tahoma"
+                       Margin="48,0,0,215"/>
+            <TextBlock Grid.Row="1"
+                       Grid.Column="1"
+                       VerticalAlignment="Bottom"
+                       HorizontalAlignment="Right"
+                       Text="Status"
+                       Height="35"
+                       Width="55"
+                       FontSize="16"
+                       FontFamily="Tahoma"
+                       Margin="0,0,48,215"/>
+        </Grid>
+    </Border>
+</UserControl>
