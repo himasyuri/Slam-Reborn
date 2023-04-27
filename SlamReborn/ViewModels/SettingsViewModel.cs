@@ -1,4 +1,6 @@
-﻿using SlamReborn.Core;
+﻿using SlamReborn.Commands;
+using SlamReborn.Core;
+using SlamReborn.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -85,5 +87,11 @@ namespace SlamReborn.ViewModels
 
         public ICommand Confirm { get; }
         public ICommand Cancel { get; }
+
+        public SettingsViewModel(ModalNavigationStore modalNavigationStore)
+        {
+            Cancel = new CloseModalCommand(modalNavigationStore);
+            Confirm = new CloseModalCommand(modalNavigationStore);
+        }
     }
 }

@@ -20,7 +20,6 @@
                 <RowDefinition/>
                 <RowDefinition/>
                 <RowDefinition/>
-                <RowDefinition/>
             </Grid.RowDefinitions>
 
             <TextBlock Grid.Row="0"
@@ -101,20 +100,44 @@
                      FontFamily="Tahoma"
                      TextAlignment="Center"
                      Text="{Binding PlayKey}"/>
-            <TextBlock Grid.Row="4"
-                       Grid.Column="1"
-                       VerticalAlignment="Center"
-                       HorizontalAlignment="Center"
-                       Text="{Binding SteamAppsPath}"
-                       FontSize="25"
-                       FontFamily="Tahoma"/>
-            <TextBlock Grid.Row="5"
-                       Grid.Column="1"
-                       VerticalAlignment="Center"
-                       HorizontalAlignment="Center"
-                       Text="{Binding Userdata}"
-                       FontSize="25"
-                       FontFamily="Tahoma"/>
+            <TextBox Grid.Row="4"
+                     Grid.Column="1"
+                     Width="490"
+                     Height="40"
+                     VerticalAlignment="Center"
+                     HorizontalAlignment="Center"
+                     Text="{Binding SteamAppsPath}"
+                     FontSize="25"
+                     FontFamily="Tahoma"/>
+            <TextBox Grid.Row="5"
+                     Grid.Column="1"
+                     Width="490"
+                     Height="40"
+                     VerticalAlignment="Center"
+                     HorizontalAlignment="Center"
+                     Text="{Binding Userdata}"
+                     FontSize="25"
+                     FontFamily="Tahoma"/>
+            <Button x:Name="Confirm"
+                    Command="{Binding Confirm}"
+                    Content="Confirm" 
+                    Grid.ColumnSpan="2" 
+                    Margin="156,0,444,0" 
+                    Grid.Row="6"
+                    Width="150"
+                    Height="50"
+                    FontSize="25"
+                    FontFamily="Tahoma"/>
+            <Button x:Name="Cancel"
+                    Command="{Binding Cancel}"
+                    Content="Cancel" 
+                    Grid.Column="1" 
+                    Margin="320,0,80,0" 
+                    Grid.Row="6"
+                    Width="150"
+                    Height="50"
+                    FontSize="25"
+                    FontFamily="Tahoma"/>
         </Grid>
     </Border>
 </UserControl>
